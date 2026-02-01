@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurtaThumb - Baixar Thumbnails em Alta Resolução</title>
+    <title>Baixar Thumb - Feito por YtaloGaymes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -62,8 +62,8 @@
 
     <!-- Header -->
     <header class="w-full max-w-4xl text-center mb-12 mt-8">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
-            <span class="gradient-text">Furtador de Thumbs</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+            <span class="gradient-text">Baixar Thumb - Feito por YtaloGaymes</span>
         </h1>
         <p class="text-slate-400 text-lg">Insira o link do vídeo e obtenha a thumbnail em qualidade máxima.</p>
     </header>
@@ -129,8 +129,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto py-8 text-slate-500 text-sm">
-        <p>&copy; 2026 FurtaThumb - Criado para facilitar seu fluxo de trabalho.</p>
+    <footer class="mt-auto py-8 text-slate-500 text-sm text-center">
+        <p>© 2026 Baixador de Thumbs - Criado para facilitar seu fluxo de trabalho! Agradeça ao YtaloGaymes.</p>
     </footer>
 
     <script>
@@ -203,20 +203,16 @@
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = url;
-                // Nome do arquivo baseado no timestamp ou ID
-                a.download = `thumbnail_thumbmax_${Date.now()}.jpg`;
+                a.download = `thumbnail_ytalo_${Date.now()}.jpg`;
                 document.body.appendChild(a);
                 a.click();
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
             } catch (error) {
-                // Fallback caso o fetch falhe por CORS (comum em alguns ambientes)
                 window.open(currentThumbnailUrl, '_blank');
-                alert("O download direto foi bloqueado pelo navegador. A imagem foi aberta em uma nova aba, clique com o botão direito e selecione 'Salvar imagem como'.");
             }
         }
 
-        // Permitir pressionar Enter no input
         inputField.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') extractThumbnail();
         });
